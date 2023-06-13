@@ -3,6 +3,7 @@ package com.chaunhat.libAppBE.config;
 import com.okta.spring.boot.oauth.Okta;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.accept.ContentNegotiationStrategy;
@@ -18,10 +19,14 @@ public class SecurityConfiguration {
         // Protect endpoints at /api/<type>/secure
         http.authorizeHttpRequests(configurer ->
                         configurer
-                                .requestMatchers("/api/books/secure/**")
-                                .authenticated())
+                                .requestMatchers("/api/books/**").permitAll()
+                                .requestMatchers("/api/reviews/**").permitAll()
+                                .requestMatchers("/api/books/secure/**").permitAll()
+                                .requestMatchers("/api/reviews/secure/**").permitAll()
+                                .anyRequest().authenticated())
                 .oauth2ResourceServer()
                 .jwt();
+
 
         // add CORS filter
         http.cors();

@@ -6,7 +6,7 @@ import com.chaunhat.libAppBE.utils.ExtractJWT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("*")
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
@@ -34,6 +34,6 @@ public class BookController {
     @PutMapping("/secure/checkout")
     public Book checkoutBook(@RequestHeader(value = "Authorization") String token, @RequestParam Long bookId) throws Exception {
         String email = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
-        return bookService.checkoutBook(userEmail, bookId);
+        return bookService.checkoutBook(email, bookId);
     }
 }

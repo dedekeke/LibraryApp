@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-inferrable-types */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useEffect, useState } from "react";
 import BookModel from "../../models/BookModel";
@@ -28,7 +26,42 @@ export const BookCheckoutPage = () => {
   const [currentLoansCount, setCurrentLoansCount] = useState(0);
   const [isLoadingCurrentLoansCount, setIsLoadingCurrentLoansCount] = useState(true);
 
+  // isCheckout ?
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
+  const [isLoadingBookCheckedOut, setIsLoadingBookCheckedOut] = useState(true);
+
   const bookId = window.location.pathname.split("/")[2];
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      const baseUrl: string = `http://localhost:8080/api/books/${bookId}`;
+
+      const response = await fetch(baseUrl);
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const responseJson = await response.json();
+
+      const loadedBook: BookModel = {
+        id: responseJson.id,
+        title: responseJson.title,
+        author: responseJson.author,
+        description: responseJson.description,
+        copies: responseJson.copies,
+        copiesAvailable: responseJson.copiesAvailable,
+        category: responseJson.category,
+        img: responseJson.img,
+      };
+
+      setBook(loadedBook);
+      setIsLoading(false);
+    };
+    fetchBooks().catch((error: any) => {
+      setIsLoading(false);
+      setHttpError(error.message);
+    });
+  }, []);
 
   useEffect(() => {
     const fetchBookReviews = async () => {
@@ -75,40 +108,8 @@ export const BookCheckoutPage = () => {
   }, []);
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      const baseUrl: string = `http://localhost:8080/api/books/${bookId}`;
-
-      const response = await fetch(baseUrl);
-      if (!response.ok) {
-        throw new Error("Something went wrong");
-      }
-
-      const responseJson = await response.json();
-
-      const loadedBook: BookModel = {
-        id: responseJson.id,
-        title: responseJson.title,
-        author: responseJson.author,
-        description: responseJson.description,
-        copies: responseJson.copies,
-        copiesAvailable: responseJson.copiesAvailable,
-        category: responseJson.category,
-        img: responseJson.img,
-      };
-
-      setBook(loadedBook);
-      setIsLoading(false);
-    };
-    fetchBooks().catch((error: any) => {
-      setIsLoading(false);
-      setHttpError(error.message);
-    });
-  }, []);
-
-  useEffect(() => {
     const fetchUserCurrentLoansCount = async () => {
       if (authState && authState.isAuthenticated) {
-        console.log(authState.accessToken?.accessToken);
         const url = "http://localhost:8080/api/books/secure/currentloans/count";
         const requestOptions = {
           method: "GET",
@@ -117,7 +118,6 @@ export const BookCheckoutPage = () => {
             "Content-Type": "application/json",
           },
         };
-        console.log(requestOptions);
         const currentLoansCountResponse = await fetch(url, requestOptions);
         if (!currentLoansCountResponse.ok) {
           throw new Error("Something went wrong");
@@ -132,6 +132,16 @@ export const BookCheckoutPage = () => {
       setHttpError(error.message);
     });
   }, [authState]);
+
+  useEffect(() => {
+    const fetchUserCheckedOutBook = async () => {};
+    fetchUserCheckedOutBook().catch(() => {
+      setIsLoadingBookCheckedOut;
+    });
+    return () => {
+      second;
+    };
+  }, [third]);
 
   if (isLoading || isLoadingReview || isLoadingCurrentLoansCount) {
     return <SpinnerLoading />;
