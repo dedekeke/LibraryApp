@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 import OktaSignIn from "@okta/okta-signin-widget";
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css'

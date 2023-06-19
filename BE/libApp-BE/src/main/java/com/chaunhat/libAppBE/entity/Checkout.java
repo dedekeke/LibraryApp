@@ -1,6 +1,7 @@
 package com.chaunhat.libAppBE.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 

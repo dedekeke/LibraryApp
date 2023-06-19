@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
-    private static final String userEmail = "root@email.com";
 
     private final BookService bookService;
 

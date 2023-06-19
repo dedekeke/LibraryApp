@@ -3,11 +3,12 @@ package com.chaunhat.libAppBE.config;
 import com.okta.spring.boot.oauth.Okta;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.accept.ContentNegotiationStrategy;
 import org.springframework.web.accept.HeaderContentNegotiationStrategy;
+
 
 @Configuration
 public class SecurityConfiguration {
@@ -17,13 +18,14 @@ public class SecurityConfiguration {
         http.csrf().disable();
 
         // Protect endpoints at /api/<type>/secure
-        http.authorizeHttpRequests(configurer ->
+        http.authorizeRequests(configurer ->
                         configurer
-                                .requestMatchers("/api/books/**").permitAll()
-                                .requestMatchers("/api/reviews/**").permitAll()
-                                .requestMatchers("/api/books/secure/**").permitAll()
-                                .requestMatchers("/api/reviews/secure/**").permitAll()
-                                .anyRequest().authenticated())
+                                .antMatchers("/api/books/secure/**",
+                                        "/api/reviews/secure/**",
+                                        "/api/messages/secure/**",
+                                        "/api/admin/secure/**")
+
+                                .authenticated())
                 .oauth2ResourceServer()
                 .jwt();
 

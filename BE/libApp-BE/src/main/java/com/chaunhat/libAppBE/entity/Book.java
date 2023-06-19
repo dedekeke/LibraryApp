@@ -1,8 +1,9 @@
 package com.chaunhat.libAppBE.entity;
 
-import jakarta.persistence.*;
 
 import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "book")
