@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="062acd46-0a77-435d-ba8d-4a63b37ed211" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/LibAppBeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/LibAppBeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/config/DataRestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/config/DataRestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/controller/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/dao/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/dao/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/dao/CheckoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/dao/CheckoutRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/dao/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/dao/ReviewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/entity/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/entity/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/entity/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/requestmodels/ReviewRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/requestmodels/ReviewRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/service/ReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/utils/ExtractJWT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/utils/ExtractJWT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/chaunhat/libAppBE/LibAppBeApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/test/java/com/chaunhat/libAppBE/LibAppBeApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.0.6/spring-boot-autoconfigure-3.0.6.jar!/org/springframework/boot/autoconfigure/graphql/data/GraphQlQueryByExampleAutoConfiguration.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/opt/apache-maven-3.9.2" />
+        <option name="userSettingsFile" value="C:\Users\dklt0_000\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2PmtYSk1AUhZS2iRHRiurnyN2Ig" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "1d82fff14a5de942d6fac1ef728d03c3",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="save" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.LibAppBeApplication">
+    <configuration name="LibAppBeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chaunhat.libAppBE.LibAppBeApplication" />
+      <module name="libApp-BE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chaunhat.libAppBE.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="libApp-BE [clean,install]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="LibAppBeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="libApp-BE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chaunhat.libAppBE.LibAppBeApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chaunhat.libAppBE.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.LibAppBeApplication" />
+        <item itemvalue="Maven.libApp-BE [clean,install]" />
+        <item itemvalue="Application.LibAppBeApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="062acd46-0a77-435d-ba8d-4a63b37ed211" name="Changes" comment="" />
+      <created>1684074134563</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684074134563</updated>
+      <workItem from="1685133366211" duration="3955000" />
+      <workItem from="1685208716392" duration="1443000" />
+      <workItem from="1685250571053" duration="599000" />
+      <workItem from="1685277935590" duration="1198000" />
+      <workItem from="1685287832598" duration="236000" />
+      <workItem from="1685288081421" duration="1544000" />
+      <workItem from="1685291908864" duration="633000" />
+      <workItem from="1685297203670" duration="185000" />
+      <workItem from="1685297400158" duration="838000" />
+      <workItem from="1685460467022" duration="51000" />
+      <workItem from="1685464602331" duration="1381000" />
+      <workItem from="1685812988600" duration="2038000" />
+      <workItem from="1685898578239" duration="1602000" />
+      <workItem from="1685986783471" duration="4525000" />
+      <workItem from="1686160014088" duration="245000" />
+      <workItem from="1686160395015" duration="2345000" />
+      <workItem from="1686242458358" duration="4034000" />
+      <workItem from="1686493566310" duration="1799000" />
+      <workItem from="1686495526789" duration="4153000" />
+      <workItem from="1686502516522" duration="2042000" />
+      <workItem from="1686505287259" duration="3174000" />
+      <workItem from="1686677722773" duration="5026000" />
+      <workItem from="1687013061102" duration="834000" />
+      <workItem from="1687015439205" duration="12508000" />
+      <workItem from="1687032891198" duration="1409000" />
+      <workItem from="1687099455628" duration="10347000" />
+      <workItem from="1687188512590" duration="1435000" />
+      <workItem from="1687278338383" duration="961000" />
+    </task>
+    <task id="LOCAL-00001" summary=".">
+      <created>1687189158486</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687189158486</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".">
+      <created>1687279273207</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687279273207</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
