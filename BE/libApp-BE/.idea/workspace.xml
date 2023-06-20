@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="062acd46-0a77-435d-ba8d-4a63b37ed211" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/LibAppBeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/LibAppBeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/config/DataRestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/config/DataRestConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/controller/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/dao/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/dao/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/dao/CheckoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/dao/CheckoutRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/dao/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/dao/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/entity/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/entity/Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/entity/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/requestmodels/ReviewRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/requestmodels/ReviewRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/service/ReviewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chaunhat/libAppBE/utils/ExtractJWT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/java/com/chaunhat/libAppBE/utils/ExtractJWT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/chaunhat/libAppBE/LibAppBeApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../libAppBE/src/test/java/com/chaunhat/libAppBE/LibAppBeApplicationTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="062acd46-0a77-435d-ba8d-4a63b37ed211" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +184,7 @@
       <workItem from="1687032891198" duration="1409000" />
       <workItem from="1687099455628" duration="10347000" />
       <workItem from="1687188512590" duration="1435000" />
-      <workItem from="1687278338383" duration="961000" />
+      <workItem from="1687278338383" duration="1055000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1687189158486</created>
@@ -224,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687279273207</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=".">
+      <created>1687279362392</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687279362392</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
