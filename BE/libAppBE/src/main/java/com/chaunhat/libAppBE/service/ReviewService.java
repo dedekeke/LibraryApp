@@ -1,13 +1,11 @@
 package com.chaunhat.libAppBE.service;
 
-import com.chaunhat.libAppBE.dao.BookRepository;
 import com.chaunhat.libAppBE.dao.ReviewRepository;
 import com.chaunhat.libAppBE.entity.Review;
 import com.chaunhat.libAppBE.requestmodels.ReviewRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -16,12 +14,10 @@ import java.util.Optional;
 @Service
 @Transactional
 public class ReviewService {
-    private BookRepository bookRepository;
     private ReviewRepository reviewRepository;
 
     @Autowired
-    public ReviewService(BookRepository bookRepository, ReviewRepository reviewRepository) {
-        this.bookRepository = bookRepository;
+    public ReviewService(ReviewRepository reviewRepository) {
         this.reviewRepository = reviewRepository;
     }
 
@@ -40,5 +36,13 @@ public class ReviewService {
         review.setDate(Date.valueOf(LocalDate.now()));
         reviewRepository.save(review);
     }
-//    public Boolean userReviewListed
+
+    public Boolean userReviewListed(String userEmail, Long bookId) {
+        Review validateReview = reviewRepository.findByUserEmailAndBookId(userEmail, bookId);
+        if (validateReview != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

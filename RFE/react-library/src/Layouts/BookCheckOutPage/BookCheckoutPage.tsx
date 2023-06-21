@@ -4,7 +4,6 @@ import BookModel from "../../models/BookModel";
 import { SpinnerLoading } from "../Utils/SpinnerLoading";
 import { StarsReview } from "../Utils/StarsReview";
 import { CheckoutAndReviewBox } from "./CheckoutAndReviewBox";
-import { error } from "console";
 import { LatestReviews } from "./LatestReviews";
 import ReviewModel from "../../models/ReviewModel";
 import { useOktaAuth } from "@okta/okta-react";
@@ -15,6 +14,9 @@ export const BookCheckoutPage = () => {
   const [book, setBook] = useState<BookModel>();
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
+
+  const [isReviewLeft, setIsReviewLeft] = useState(false);
+  const [isLoadingUserReview, setIsLoadingUserReview] = useState(true);
 
   //Review state
   const [reviews, setReviews] = useState<ReviewModel[]>([]);
@@ -31,6 +33,7 @@ export const BookCheckoutPage = () => {
   const [isLoadingBookCheckedOut, setIsLoadingBookCheckedOut] = useState(true);
 
   const bookId = window.location.pathname.split("/")[2];
+  //global static requestoptions
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -105,7 +108,33 @@ export const BookCheckoutPage = () => {
       setIsLoadingReview(false);
       setHttpError(error.message);
     });
-  }, []);
+  }, [isReviewLeft]);
+
+  useEffect(() => {
+    const fetchUserReviewBook = async () => {
+      if (authState && authState.isAuthenticated) {
+        const url = `http://localhost:8080/api/reviews/secure/user/book/?bookId=${bookId}`;
+        const requestOptions = {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${authState.accessToken?.accessToken}`,
+            "Content-Type": "application/json",
+          },
+        };
+        const userReview = await fetch(url, requestOptions);
+        if (!userReview.ok) {
+          throw new Error("Something went wrong");
+        }
+        const userReviewResponseJson = await userReview.json();
+        setIsReviewLeft(userReviewResponseJson);
+      }
+      setIsLoadingUserReview(false);
+    };
+    fetchUserReviewBook().catch((error: any) => {
+      setIsLoadingReview(false);
+      setHttpError(error.message);
+    });
+  }, [authState]);
 
   useEffect(() => {
     const fetchUserCurrentLoansCount = async () => {
@@ -161,7 +190,13 @@ export const BookCheckoutPage = () => {
     });
   }, [authState]);
 
-  if (isLoading || isLoadingReview || isLoadingCurrentLoansCount || isLoadingBookCheckedOut) {
+  if (
+    isLoading ||
+    isLoadingReview ||
+    isLoadingCurrentLoansCount ||
+    isLoadingBookCheckedOut ||
+    isLoadingUserReview
+  ) {
     return <SpinnerLoading />;
   }
 
@@ -221,6 +256,7 @@ export const BookCheckoutPage = () => {
             isAuthenticated={authState?.isAuthenticated}
             isCheckedOut={isCheckedOut}
             checkoutBook={checkoutBook}
+            isReviewLeft={isReviewLeft}
           />
         </div>
         <hr />
@@ -254,6 +290,7 @@ export const BookCheckoutPage = () => {
             isAuthenticated={authState?.isAuthenticated}
             isCheckedOut={isCheckedOut}
             checkoutBook={checkoutBook}
+            isReviewLeft={isReviewLeft}
           />
           <hr />
           <LatestReviews reviews={reviews} bookId={book?.id} mobile={true} />
