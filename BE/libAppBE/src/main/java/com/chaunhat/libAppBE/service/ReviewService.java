@@ -31,7 +31,7 @@ public class ReviewService {
         review.setRating(reviewRequest.getRating());
         review.setUserEmail(userEmail);
         if (reviewRequest.getReviewDescription().isPresent()) {
-            review.setReviewDescription(Optional.ofNullable(review.getReviewDescription()).get());
+            review.setReviewDescription(reviewRequest.getReviewDescription().get());
         }
         review.setDate(Date.valueOf(LocalDate.now()));
         reviewRepository.save(review);
@@ -39,10 +39,6 @@ public class ReviewService {
 
     public Boolean userReviewListed(String userEmail, Long bookId) {
         Review validateReview = reviewRepository.findByUserEmailAndBookId(userEmail, bookId);
-        if (validateReview != null) {
-            return true;
-        } else {
-            return false;
-        }
+        return validateReview != null;
     }
 }
