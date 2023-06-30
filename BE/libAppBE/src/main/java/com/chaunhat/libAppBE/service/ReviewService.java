@@ -27,7 +27,7 @@ public class ReviewService {
             throw new Exception("Review already created");
         }
         Review review = new Review();
-        review.setBookId(review.getBookId());
+        review.setBookId(reviewRequest.getBookId());
         review.setRating(reviewRequest.getRating());
         review.setUserEmail(userEmail);
         if (reviewRequest.getReviewDescription().isPresent()) {
