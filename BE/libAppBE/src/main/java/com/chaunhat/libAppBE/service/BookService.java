@@ -73,7 +73,7 @@ public class BookService {
                     .filter(x -> x.getBookId() == book.getId()).findFirst();
             if (checkout.isPresent()){
                 Date d1 = sdf.parse(checkout.get().getReturnDate());
-                Date d2 = sdf.parse(checkout.get().getReturnDate());
+                Date d2 = sdf.parse(LocalDate.now().toString());
 
                 TimeUnit time = TimeUnit.DAYS;
 

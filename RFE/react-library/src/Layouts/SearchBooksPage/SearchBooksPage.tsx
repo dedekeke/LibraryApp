@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import BookModel from "../../models/BookModel";
 import { SpinnerLoading } from "../Utils/SpinnerLoading";
@@ -25,7 +26,7 @@ export const SearchBooksPage = () => {
       if (searchUrl === "") {
         url = `${baseUrl}?page=${currentPage - 1}&size=${booksPerPage}`;
       } else {
-        let searchWithPage = searchUrl.replace('<pageNumber>', `${currentPage - 1}`);
+        let searchWithPage = searchUrl.replace("<pageNumber>", `${currentPage - 1}`);
         url = baseUrl + searchWithPage;
       }
 
@@ -92,7 +93,7 @@ export const SearchBooksPage = () => {
       setSearchUrl(
         `/search/findByTitleContaining?title=${search}&page=<pageNumber>&size=${booksPerPage}`
       );
-      setCategorySelection('Book category');
+      setCategorySelection("Book category");
     }
   };
   // category
@@ -105,10 +106,12 @@ export const SearchBooksPage = () => {
       value.toLowerCase() === "devops"
     ) {
       setCategorySelection(value);
-      setSearchUrl(`/search/findByCategory?category=${value}&page=<pageNumber>&size=${booksPerPage}`)
+      setSearchUrl(
+        `/search/findByCategory?category=${value}&page=<pageNumber>&size=${booksPerPage}`
+      );
     } else {
-      setCategorySelection('All');
-      setSearchUrl(`?page=<pageNumber>&size=${booksPerPage}`)
+      setCategorySelection("All");
+      setSearchUrl(`?page=<pageNumber>&size=${booksPerPage}`);
     }
   };
 
@@ -135,10 +138,7 @@ export const SearchBooksPage = () => {
                   className="form-control me-2"
                   onChange={(e) => setSearch(e.target.value)}
                 />
-                <button
-                  className="btn btn-outline-success"
-                  onClick={searchHandleChange}
-                >
+                <button className="btn btn-outline-success" onClick={searchHandleChange}>
                   Search
                 </button>
               </div>
@@ -150,35 +150,31 @@ export const SearchBooksPage = () => {
                   id="dropdownMenuButton1"
                   type="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                  aria-expanded="false">
                   {categorySelection}
                 </button>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton1"
-                >
-                  <li onClick={() => categoryField('All')}>
+                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li onClick={() => categoryField("All")}>
                     <a href="#" className="dropdown-item">
                       All
                     </a>
                   </li>
-                  <li onClick={() => categoryField('FE')}>
+                  <li onClick={() => categoryField("FE")}>
                     <a href="#" className="dropdown-item">
                       Front End
                     </a>
                   </li>
-                  <li onClick={() => categoryField('BE')}>
+                  <li onClick={() => categoryField("BE")}>
                     <a href="#" className="dropdown-item">
                       Back End
                     </a>
                   </li>
-                  <li onClick={() => categoryField('Data')}>
+                  <li onClick={() => categoryField("Data")}>
                     <a href="#" className="dropdown-item">
                       Data
                     </a>
                   </li>
-                  <li onClick={() => categoryField('DevOps')}>
+                  <li onClick={() => categoryField("DevOps")}>
                     <a href="#" className="dropdown-item">
                       Devops
                     </a>
@@ -191,8 +187,7 @@ export const SearchBooksPage = () => {
             <div className="mt-3">
               <h5>Number of results: {totalAmountOfBooks}</h5>
               <p>
-                {indexOfFirstBook + 1} to {lastItem} of {totalAmountOfBooks}{" "}
-                items:
+                {indexOfFirstBook + 1} to {lastItem} of {totalAmountOfBooks} items:
               </p>
               {books.map((book) => (
                 <SearchBook book={book} key={book.id} />
@@ -204,18 +199,13 @@ export const SearchBooksPage = () => {
               <a
                 href="#"
                 type="button"
-                className="btn main-color btn-md px-4 me-md-2 fw-bold text-white"
-              >
+                className="btn main-color btn-md px-4 me-md-2 fw-bold text-white">
                 Library Services
               </a>
             </div>
           )}
           {totalPages > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              paginate={paginate}
-            />
+            <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
           )}
         </div>
       </div>

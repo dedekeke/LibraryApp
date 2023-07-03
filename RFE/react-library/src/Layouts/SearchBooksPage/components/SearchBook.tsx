@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import BookModel from "../../../models/BookModel";
 
@@ -10,18 +11,14 @@ export const SearchBook: React.FC<{ book: BookModel }> = (props) => {
             {props.book.img ? (
               <img src={props.book.img} width="123" height="196" alt="Book" />
             ) : (
-              <img
-                src={require("../../../Images/BooksImages/book-luv2code-1000.png")}
-              />
+              <img src={require("../../../Images/BooksImages/book-luv2code-1000.png")} />
             )}
           </div>
           <div className="d-lg-none d-flex justify-content-center align-items-center">
             {props.book.img ? (
               <img src={props.book.img} width="123" height="196" alt="Book" />
             ) : (
-              <img
-                src={require("../../../Images/BooksImages/book-luv2code-1000.png")}
-              />
+              <img src={require("../../../Images/BooksImages/book-luv2code-1000.png")} />
             )}
           </div>
         </div>

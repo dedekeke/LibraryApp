@@ -4,7 +4,6 @@ import { Redirect } from "react-router-dom";
 import { SpinnerLoading } from "../Layouts/Utils/SpinnerLoading";
 import OktaSignInWidget from "./OktaSignInWidget";
 
-// eslint-disable-next-line react/prop-types
 const LoginWidget = ({ config }) => {
     const { oktaAuth, authState } = useOktaAuth();
     const onSuccess = (tokens) => {

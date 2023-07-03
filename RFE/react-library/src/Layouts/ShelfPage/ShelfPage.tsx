@@ -1,4 +1,5 @@
 import React from "react";
+import { Loans } from "./components/Loans";
 
 export const ShelfPage = () => {
   return (
@@ -38,7 +39,7 @@ export const ShelfPage = () => {
             id="nav-loans"
             role="tabpanel"
             aria-labelledby="nav-loans-tab">
-            <p>Loans</p>
+            <Loans />
           </div>
           <div
             className="tab-pane fade"
