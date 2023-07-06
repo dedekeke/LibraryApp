@@ -20,7 +20,7 @@ export const Navbar = () => {
       <div className="container-fluid">
         <span className="navbar-brand">sth</span>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler ms-auto"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavDropdown"
@@ -65,7 +65,6 @@ export const Navbar = () => {
             )}
           </ul>
         </div>
-        ,
       </div>
     </nav>
   );
