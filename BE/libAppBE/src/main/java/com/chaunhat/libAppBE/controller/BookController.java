@@ -23,7 +23,7 @@ public class BookController {
 
     @GetMapping("/secure/currentloans")
     public List<ShelfCurrentLoansResponse> currentLoans(@RequestHeader(value = "Authorization") String token)
-        throws Exception {
+            throws Exception {
         String userEmail = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
         return bookService.currentLoans(userEmail);
     }
@@ -47,9 +47,16 @@ public class BookController {
     }
 
     @PutMapping("/secure/return")
-    public void returnBook (@RequestHeader(value = "Authorization") String token,
-                            @RequestParam Long bookId) throws Exception {
+    public void returnBook(@RequestHeader(value = "Authorization") String token,
+                           @RequestParam Long bookId) throws Exception {
         String email = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
         bookService.returnBook(email, bookId);
+    }
+
+    @PutMapping("/secure/renew/loan")
+    public void renewLoan(@RequestHeader(value = "Authorization") String token,
+                          @RequestParam Long bookId) throws Exception {
+        String email = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
+        bookService.renewLoan(email, bookId);
     }
 }

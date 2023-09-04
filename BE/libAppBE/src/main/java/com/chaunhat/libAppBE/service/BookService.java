@@ -61,17 +61,17 @@ public class BookService {
 
         List<Checkout> checkoutList = checkoutRepository.findBooksByUserEmail(userEmail);
         List<Long> bookIdList = new ArrayList<>();
-        for (Checkout i: checkoutList){
+        for (Checkout i : checkoutList) {
             bookIdList.add(i.getBookId());
         }
         List<Book> books = bookRepository.findBooksByBookIds(bookIdList);
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-        for (Book book: books){
+        for (Book book : books) {
             Optional<Checkout> checkout = checkoutList.stream()
-                    .filter(x -> x.getBookId() == book.getId()).findFirst();
-            if (checkout.isPresent()){
+                    .filter(x -> x.getBookId().equals(book.getId())).findFirst();
+            if (checkout.isPresent()) {
                 Date d1 = sdf.parse(checkout.get().getReturnDate());
                 Date d2 = sdf.parse(LocalDate.now().toString());
 
@@ -85,8 +85,8 @@ public class BookService {
         return shelfCurrentLoansResponses;
     }
 
-    public void returnBook (String userEmail, Long bookId) throws Exception {
-        Optional<Book> book= bookRepository.findById(bookId);
+    public void returnBook(String userEmail, Long bookId) throws Exception {
+        Optional<Book> book = bookRepository.findById(bookId);
         Checkout validateCheckout = checkoutRepository.findByUserEmailAndBookId(userEmail, bookId);
 
         if (!book.isPresent() || validateCheckout == null) {
@@ -97,5 +97,21 @@ public class BookService {
 
         bookRepository.save(book.get());
         checkoutRepository.deleteById(validateCheckout.getId());
+    }
+
+    public void renewLoan(String userEmail, Long bookId) throws Exception {
+        Checkout validateCheckout = checkoutRepository.findByUserEmailAndBookId(userEmail, bookId);
+        if (validateCheckout == null) {
+            throw new Exception("Book does not exist or not checked out by user");
+        }
+        SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date d1 = sdFormat.parse(validateCheckout.getReturnDate());
+        Date d2 = sdFormat.parse(LocalDate.now().toString());
+
+        if (d1.compareTo(d2) > 0 || d1.compareTo(d2) == 0) {
+            validateCheckout.setReturnDate(LocalDate.now().plusDays(7).toString());
+            checkoutRepository.save(validateCheckout);
+        }
     }
 }

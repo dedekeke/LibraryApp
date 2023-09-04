@@ -68,6 +68,23 @@ export const Loans = () => {
     setCheckout(!checkout);
   }
 
+  async function renewLoan(bookId: number) {
+    const url = `http://localhost:8080/api/books/secure/renew/loan/?bookId=${bookId}`;
+    const requestOption = {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+        "Content-type": "application/json",
+      },
+    };
+
+    const returnResponse = await fetch(url, requestOption);
+    if (!returnResponse.ok) {
+      throw new Error("Something went wrong!");
+    }
+    setCheckout(!checkout);
+  }
+
   return (
     <div>
       {/* Desktop */}
@@ -80,12 +97,12 @@ export const Loans = () => {
                 <div className="row mt-3 mb-3">
                   <div className="col-4 col-md-4 container">
                     {loan.book?.img ? (
-                      <img src={loan.book?.img} width={226} height={349} alt="Book" />
+                      <img src={loan.book?.img} width="226" height="349" alt="Book" />
                     ) : (
                       <img
                         src={require("./../../../Images/BooksImages/book-luv2code-1000.png")}
-                        width={226}
-                        height={349}
+                        width="226"
+                        height="349"
                         alt="Book"
                       />
                     )}
@@ -125,7 +142,12 @@ export const Loans = () => {
                   </div>
                 </div>
                 <hr />
-                <LoansModal loan={loan} mobile={false} returnBook={returnBook} />
+                <LoansModal
+                  loan={loan}
+                  mobile={false}
+                  returnBook={returnBook}
+                  renewLoan={renewLoan}
+                />
               </div>
             ))}
           </>
@@ -147,12 +169,12 @@ export const Loans = () => {
               <div key={loan.book.id}>
                 <div className="d-flex justify-content-center align-items-center">
                   {loan.book?.img ? (
-                    <img src={loan.book?.img} width={226} height={349} alt="Book" />
+                    <img src={loan.book?.img} width="226" height="349" alt="Book" />
                   ) : (
                     <img
                       src={require("./../../../Images/BooksImages/book-luv2code-1000.png")}
-                      width={226}
-                      height={349}
+                      width="226"
+                      height="349"
                       alt="Book"
                     />
                   )}
@@ -190,7 +212,12 @@ export const Loans = () => {
                 </div>
 
                 <hr />
-                <LoansModal loan={loan} mobile={true} returnBook={returnBook} />
+                <LoansModal
+                  loan={loan}
+                  mobile={true}
+                  returnBook={returnBook}
+                  renewLoan={renewLoan}
+                />
               </div>
             ))}
           </>

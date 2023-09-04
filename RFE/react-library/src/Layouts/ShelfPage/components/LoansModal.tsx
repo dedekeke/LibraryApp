@@ -1,9 +1,12 @@
 import React from "react";
 import ShelfCurrentLoans from "../../../models/ShelfCurrentLoans";
 
-export const LoansModal: React.FC<{ loan: ShelfCurrentLoans; mobile: boolean; returnBook: any }> = (
-  props
-) => {
+export const LoansModal: React.FC<{
+  loan: ShelfCurrentLoans;
+  mobile: boolean;
+  returnBook: any;
+  renewLoan: any;
+}> = (props) => {
   return (
     <div
       className="modal fade"
@@ -66,8 +69,7 @@ export const LoansModal: React.FC<{ loan: ShelfCurrentLoans; mobile: boolean; re
                     onClick={
                       props.loan.daysLeft < 0
                         ? (event) => event.preventDefault()
-                        : // () => props.renewLoan(props.loan.book.id)
-                          (event) => event.preventDefault()
+                        : () => props.renewLoan(props.loan.book.id)
                     }
                     data-bs-dismiss="modal"
                     className={
