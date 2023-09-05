@@ -1,4 +1,4 @@
-package com.chaunhat.libAppBE.dao;
+package com.chaunhat.libAppBE.repository;
 
 import com.chaunhat.libAppBE.entity.Checkout;
 import org.springframework.data.jpa.repository.JpaRepository;

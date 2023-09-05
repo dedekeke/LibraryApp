@@ -4,13 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7abd8f7-adfd-4122-830f-6b2f87ea22fb" name="Changes" comment=".">
+    <list default="true" id="e7abd8f7-adfd-4122-830f-6b2f87ea22fb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/dao/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/dao/CheckoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/repository/CheckoutRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/dao/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/repository/ReviewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/entity/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/entity/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/service/ReviewService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -18,10 +35,14 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2S0RG1D8JBrRjdiQzx5CpbeS7b6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,15 +52,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
     "spring.configuration.checksum": "1d82fff14a5de942d6fac1ef728d03c3",
-    "ts.external.directory.path": "D:\\Project\\Mine\\LibraryApp\\RFE\\react-library\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -61,24 +81,12 @@
       <option name="presentableId" value="Default" />
       <updated>1688281417127</updated>
       <workItem from="1688281417819" duration="672000" />
-      <workItem from="1693842853610" duration="305000" />
+      <workItem from="1693881552347" duration="1373000" />
+      <workItem from="1693883162708" duration="4488000" />
     </task>
-    <task id="LOCAL-00001" summary=".">
-      <option name="closed" value="true" />
-      <created>1693843018137</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1693843018137</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>

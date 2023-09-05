@@ -1,4 +1,4 @@
-package com.chaunhat.libAppBE.dao;
+package com.chaunhat.libAppBE.repository;
 
 import com.chaunhat.libAppBE.entity.Review;
 import org.springframework.data.domain.Page;

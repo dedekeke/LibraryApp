@@ -1,6 +1,6 @@
 package com.chaunhat.libAppBE.service;
 
-import com.chaunhat.libAppBE.dao.ReviewRepository;
+import com.chaunhat.libAppBE.repository.ReviewRepository;
 import com.chaunhat.libAppBE.entity.Review;
 import com.chaunhat.libAppBE.requestmodels.ReviewRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Service
 @Transactional
