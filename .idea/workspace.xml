@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7abd8f7-adfd-4122-830f-6b2f87ea22fb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e7abd8f7-adfd-4122-830f-6b2f87ea22fb" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/dao/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/repository/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/dao/CheckoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/repository/CheckoutRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/dao/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/entity/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/entity/History.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/libAppBE/src/main/java/com/chaunhat/libAppBE/service/ReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RFE/react-library/src/Layouts/ShelfPage/ShelfPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/RFE/react-library/src/Layouts/ShelfPage/ShelfPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RFE/react-library/src/Layouts/ShelfPage/components/HistoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/RFE/react-library/src/Layouts/ShelfPage/components/HistoryPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +31,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
+  &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2S0RG1D8JBrRjdiQzx5CpbeS7b6" />
   <component name="ProjectLevelVcsManager">
@@ -52,6 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,7 +54,7 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
     "spring.configuration.checksum": "1d82fff14a5de942d6fac1ef728d03c3",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "D:\\Project\\Mine\\LibraryApp\\RFE\\react-library\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83,6 +78,8 @@
       <workItem from="1688281417819" duration="672000" />
       <workItem from="1693881552347" duration="1373000" />
       <workItem from="1693883162708" duration="4488000" />
+      <workItem from="1693941814796" duration="154000" />
+      <workItem from="1694106200758" duration="1667000" />
     </task>
     <servers />
   </component>
