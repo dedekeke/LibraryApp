@@ -3,7 +3,6 @@ package com.chaunhat.libAppBE.entity;
 import javax.persistence.*;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "checkout")
