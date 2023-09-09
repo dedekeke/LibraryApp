@@ -44,8 +44,13 @@ export const MessagesPage = () => {
           >
             <p>Post new message</p>
           </div>
-          <div className="tab-pane fade" id="nav-message" role="tabpanel" aria-labelledby="nav-message-tab">
-            {messagesClick ? <p>Messages</p>: <></>}
+          <div
+            className="tab-pane fade"
+            id="nav-message"
+            role="tabpanel"
+            aria-labelledby="nav-message-tab"
+          >
+            {messagesClick ? <p>Messages</p> : <></>}
           </div>
         </div>
       </div>
