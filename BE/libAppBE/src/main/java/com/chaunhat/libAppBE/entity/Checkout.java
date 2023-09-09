@@ -3,14 +3,13 @@ package com.chaunhat.libAppBE.entity;
 import javax.persistence.*;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "checkout")
 @Data
+@NoArgsConstructor
 public class Checkout {
-
-    public Checkout() {
-    }
 
     public Checkout(String userEmail, String checkoutDate, String returnDate, Long bookId) {
         this.userEmail = userEmail;

@@ -1,12 +1,14 @@
 package com.chaunhat.libAppBE.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "History")
 @Data
+@NoArgsConstructor
 public class History {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
@@ -33,9 +35,6 @@ public class History {
 
     @Column(name = "img")
     private String img;
-
-    public History() {
-    }
 
     public History(String userEmail, String checkoutDate, String returnedDate, String title, String author, String description, String img) {
         this.userEmail = userEmail;

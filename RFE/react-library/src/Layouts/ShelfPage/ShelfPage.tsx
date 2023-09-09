@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Loans } from "./components/Loans";
-import {HistoryPage} from "./components/HistoryPage";
+import { HistoryPage } from "./components/HistoryPage";
 
 export const ShelfPage = () => {
+  const [historyClick, setHistoryClick] = useState(false);
+
   return (
     <div className="container">
       <div className="mt-3">
@@ -16,7 +18,9 @@ export const ShelfPage = () => {
               type="button"
               role="tab"
               aria-controls="nav-loans"
-              aria-selected="true">
+              aria-selected="true"
+              onClick={() => setHistoryClick(false)}
+            >
               Loans
             </button>
           </li>
@@ -29,7 +33,9 @@ export const ShelfPage = () => {
               type="button"
               role="tab"
               aria-controls="nav-history"
-              aria-selected="false">
+              aria-selected="false"
+              onClick={() => setHistoryClick(true)}
+            >
               Your History
             </button>
           </li>
@@ -39,15 +45,17 @@ export const ShelfPage = () => {
             className="tab-pane fade show active"
             id="nav-loans"
             role="tabpanel"
-            aria-labelledby="nav-loans-tab">
+            aria-labelledby="nav-loans-tab"
+          >
             <Loans />
           </div>
           <div
             className="tab-pane fade"
             id="nav-history"
             role="tabpanel"
-            aria-labelledby="nav-history-tab">
-            <HistoryPage />
+            aria-labelledby="nav-history-tab"
+          >
+            {historyClick ? <HistoryPage /> : <></>}
           </div>
         </div>
       </div>
