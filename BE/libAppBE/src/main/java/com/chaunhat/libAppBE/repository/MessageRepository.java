@@ -1,9 +1,12 @@
 package com.chaunhat.libAppBE.repository;
 
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chaunhat.libAppBE.entity.Message;
 
-public interface MessageRepository extends JpaRepository<Message, Long>{
-    
+public interface MessageRepository extends JpaRepository<Message, Long> {
+    Page<Message> findByUserEmail(@RequestParam("user_email") String userEmail, Pageable pageable);
 }

@@ -2,6 +2,7 @@ package com.chaunhat.libAppBE.config;
 
 
 import com.chaunhat.libAppBE.entity.Book;
+import com.chaunhat.libAppBE.entity.Message;
 import com.chaunhat.libAppBE.entity.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -23,8 +24,10 @@ public class DataRestConfig implements RepositoryRestConfigurer {
         };
         config.exposeIdsFor(Book.class);
         config.exposeIdsFor(Review.class);
+        config.exposeIdsFor(Message.class);
         disableHttpMethod(Book.class, config, unsupportedActions);
         disableHttpMethod(Review.class, config, unsupportedActions);
+        disableHttpMethod(Message.class, config, unsupportedActions);
 
         /* Configure CORS Mapping*/
         cors.addMapping(config.getBasePath() + "/**")
