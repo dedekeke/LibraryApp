@@ -1,15 +1,16 @@
 package com.chaunhat.libAppBE.entity;
 
-import javax.persistence.*;
-
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "messages")
 @Data
-@NoArgsConstructor
 public class Message {
+
+    public Message() {
+    }
 
     public Message(String title, String question) {
         this.title = title;
@@ -38,5 +39,4 @@ public class Message {
 
     @Column(name = "closed")
     private boolean closed;
-
 }

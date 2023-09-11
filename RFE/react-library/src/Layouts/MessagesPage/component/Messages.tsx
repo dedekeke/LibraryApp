@@ -19,9 +19,7 @@ const Messages = () => {
   useEffect(() => {
     const fetchUserMessages = async () => {
       if (authState && authState?.isAuthenticated) {
-        const url = `http://localhost:8080/api/messages/search/findByUserEmail/?userEmail=${
-          authState?.accessToken?.claims.sub
-        }&page=${currentPage - 1}&size=${messagesPerPage}`;
+        const url = `http://localhost:8080/api/messages/search/findByUserEmail/?userEmail=${authState?.accessToken?.claims.sub}&page=${currentPage - 1}&size=${messagesPerPage}`;
         const requestOption = {
           method: "GET",
           headers: {
@@ -34,7 +32,7 @@ const Messages = () => {
           throw new Error("Something went wrong");
         }
         const messageResponseJson = await messageResponse.json();
-        setMessages(messageResponseJson._embedded.message);
+        setMessages(messageResponseJson._embedded.messages);
         setTotalPages(messageResponseJson.page.totalPages);
       }
       setIsLoadingMessages(false);
@@ -62,7 +60,7 @@ const Messages = () => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
   return (
     <div className="mt-2">
-      {messages.length > 0 ? (
+      {messages && messages.length > 0 ? (
         <>
           <h5>Current Q/A: </h5>
           {messages.map((message) => (

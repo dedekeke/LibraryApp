@@ -10,7 +10,7 @@ import com.chaunhat.libAppBE.repository.MessageRepository;
 @Service
 @Transactional
 public class MessagesService {
-    private MessageRepository repository;
+    private final MessageRepository repository;
 
     @Autowired
     public MessagesService(MessageRepository repository) {

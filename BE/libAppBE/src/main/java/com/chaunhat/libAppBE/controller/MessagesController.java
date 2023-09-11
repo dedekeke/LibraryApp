@@ -1,12 +1,8 @@
 package com.chaunhat.libAppBE.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.web.bind.annotation.*;
 
 import com.chaunhat.libAppBE.entity.Message;
 import com.chaunhat.libAppBE.service.MessagesService;
@@ -16,7 +12,7 @@ import com.chaunhat.libAppBE.utils.ExtractJWT;
 @RestController
 @RequestMapping("/api/messages")
 public class MessagesController {
-    private MessagesService service;
+    private final MessagesService service;
 
     @Autowired
     public MessagesController(MessagesService service) {
