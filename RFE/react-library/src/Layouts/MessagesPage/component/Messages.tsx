@@ -11,8 +11,7 @@ const Messages = () => {
   // message
   const [messages, setMessages] = useState<MessageModel[]>([]);
   // pagination
-  // TO-DO
-  let messagesPerPage = 5;
+  const messagesPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 

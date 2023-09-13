@@ -13,6 +13,7 @@ import LoginWidget from "./Auth/LoginWidget";
 import { ReviewListPage } from "./Layouts/BookCheckOutPage/ReviewListPage/ReviewListPage";
 import { ShelfPage } from "./Layouts/ShelfPage/ShelfPage";
 import { MessagesPage } from "./Layouts/MessagesPage/MessagesPage";
+import { ManageLibraryPage } from "./Layouts/ManageLibraryPage/ManageLibraryPage";
 
 const oktaAuth = new OktaAuth(oktaConfig);
 
@@ -32,7 +33,8 @@ export const App = () => {
       <Security
         oktaAuth={oktaAuth}
         restoreOriginalUri={restoreOrginalUri}
-        onAuthRequired={customAuthHandler}>
+        onAuthRequired={customAuthHandler}
+      >
         <Navbar />
         <div className="flex-grow-1">
           <Switch>
@@ -51,7 +53,10 @@ export const App = () => {
             <Route path="/checkout/:bookId">
               <BookCheckoutPage />
             </Route>
-            <Route path="/login" render={() => <LoginWidget config={oktaConfig} />} />
+            <Route
+              path="/login"
+              render={() => <LoginWidget config={oktaConfig} />}
+            />
             <Route path="/login/callback" component={LoginCallback} />
             <SecureRoute path="/shelf">
               <ShelfPage />
@@ -59,6 +64,7 @@ export const App = () => {
             <SecureRoute path="/messages">
               <MessagesPage />
             </SecureRoute>
+            <SecureRoute path="/admin"> <ManageLibraryPage /></SecureRoute>
           </Switch>
         </div>
         <Footer />
