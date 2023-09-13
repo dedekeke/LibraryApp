@@ -25,6 +25,7 @@ dist/
 
 # JetBrains IDE
 .idea/
+.idea/workspace.xml
 
 # Unit test reports
 TEST*.xml
