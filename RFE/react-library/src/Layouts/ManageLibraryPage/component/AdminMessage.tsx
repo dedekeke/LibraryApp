@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import MessageModel from "../../../models/MessageModel";
 
-export const AdminMessage: React.FC<{ message: MessageModel }> = (props, keys) => {
+export const AdminMessage: React.FC<{ message: MessageModel; submitResponseToQuestion: any }> = (props, keys) => {
   const [displayWarning, setDisplayWarning] = useState(false);
   const [response, setResponse] = useState("");
+
+  function submitBtn() {
+    if (props.message.id != null && response != "") {
+      props.submitResponseToQuestion(props.message.id, response);
+      setDisplayWarning(false);
+    } else {
+      setDisplayWarning(true);
+    }
+  }
 
   return (
     <div key={props.message.id}>
@@ -32,7 +41,11 @@ export const AdminMessage: React.FC<{ message: MessageModel }> = (props, keys) =
                 value={response}
               />
             </div>
-            <div><button className="btn btn-primary mt-3" type="button">Submit</button></div>
+            <div>
+              <button className="btn btn-primary mt-3" type="button" onClick={submitBtn}>
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>
