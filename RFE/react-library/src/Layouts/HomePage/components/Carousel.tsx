@@ -12,8 +12,8 @@ export const Carousel = () => {
 
   useEffect(() => {
     const fetchBooks = async () => {
-      // const baseUrl: string = "http://localhost:8080/api/books";
-      const baseUrl = "http://localhost:8080/api/books";
+      // const baseUrl: string = "${process.env.REACT_APP_API}/books";
+      const baseUrl = `${process.env.REACT_APP_API}/books`;
 
       // const url: string = `${baseUrl}?page=0&size=9`;
       const url = `${baseUrl}?page=0&size=9`;
@@ -74,10 +74,7 @@ export const Carousel = () => {
       <div className="homepage-carousel-title">
         <h3>Find your next &apos;I stayed up too late reading&apos; book</h3>
       </div>
-      <div
-        id="carouselExampleControls"
-        className="carousel carousel-dark slide mt-5 d-none d-lg-block"
-        data-bs-interval="false">
+      <div id="carouselExampleControls" className="carousel carousel-dark slide mt-5 d-none d-lg-block" data-bs-interval="false">
         {/* Desktop */}
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -102,19 +99,11 @@ export const Carousel = () => {
             </div>
           </div>
         </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev">
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
         </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next">
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>

@@ -16,7 +16,7 @@ export const Loans = () => {
   useEffect(() => {
     const fetchUserCurrentLoans = async () => {
       if (authState?.isAuthenticated) {
-        const url = `http://localhost:8080/api/books/secure/currentloans`;
+        const url = `${process.env.REACT_APP_API}/books/secure/currentloans`;
         const requestOption = {
           method: "GET",
           headers: {
@@ -53,7 +53,7 @@ export const Loans = () => {
   }
 
   async function returnBook(bookId: number) {
-    const url = `http://localhost:8080/api/books/secure/return/?bookId=${bookId}`;
+    const url = `${process.env.REACT_APP_API}/books/secure/return/?bookId=${bookId}`;
     const requestOption = {
       method: "PUT",
       headers: {
@@ -69,7 +69,7 @@ export const Loans = () => {
   }
 
   async function renewLoan(bookId: number) {
-    const url = `http://localhost:8080/api/books/secure/renew/loan/?bookId=${bookId}`;
+    const url = `${process.env.REACT_APP_API}/books/secure/renew/loan/?bookId=${bookId}`;
     const requestOption = {
       method: "PUT",
       headers: {
@@ -99,31 +99,18 @@ export const Loans = () => {
                     {loan.book?.img ? (
                       <img src={loan.book?.img} width="226" height="349" alt="Book" />
                     ) : (
-                      <img
-                        src={require("./../../../Images/BooksImages/book-luv2code-1000.png")}
-                        width="226"
-                        height="349"
-                        alt="Book"
-                      />
+                      <img src={require("./../../../Images/BooksImages/book-luv2code-1000.png")} width="226" height="349" alt="Book" />
                     )}
                   </div>
                   <div className="card col-3 col-md-3 container d-flex">
                     <div className="card-body">
                       <div className="mt-3">
                         <h4>Loan Options</h4>
-                        {loan.daysLeft > 0 && (
-                          <p className="text-secondary">Due in {loan.daysLeft} days.</p>
-                        )}
+                        {loan.daysLeft > 0 && <p className="text-secondary">Due in {loan.daysLeft} days.</p>}
                         {loan.daysLeft === 0 && <p className="text-success">Due Today.</p>}
-                        {loan.daysLeft < 0 && (
-                          <p className="text-danger">Past due by {loan.daysLeft} days.</p>
-                        )}
+                        {loan.daysLeft < 0 && <p className="text-danger">Past due by {loan.daysLeft} days.</p>}
                         <div className="list-group mt-3">
-                          <button
-                            className="list-group-item list-group-item-action"
-                            aria-current="true"
-                            data-bs-toggle="modal"
-                            data-bs-target={`#modal${loan.book.id}`}>
+                          <button className="list-group-item list-group-item-action" aria-current="true" data-bs-toggle="modal" data-bs-target={`#modal${loan.book.id}`}>
                             Manage Loan
                           </button>
                           <Link to={"search"} className="list-group-item list-group-item-action">
@@ -132,9 +119,7 @@ export const Loans = () => {
                         </div>
                       </div>
                       <hr />
-                      <p className="mt-3">
-                        Help other find their adventure by reviewing your loan.
-                      </p>
+                      <p className="mt-3">Help other find their adventure by reviewing your loan.</p>
                       <Link className="btn btn-primary" to={`/checkout/${loan.book.id}`}>
                         Leave a review
                       </Link>
@@ -142,12 +127,7 @@ export const Loans = () => {
                   </div>
                 </div>
                 <hr />
-                <LoansModal
-                  loan={loan}
-                  mobile={false}
-                  returnBook={returnBook}
-                  renewLoan={renewLoan}
-                />
+                <LoansModal loan={loan} mobile={false} returnBook={returnBook} renewLoan={renewLoan} />
               </div>
             ))}
           </>
@@ -171,31 +151,18 @@ export const Loans = () => {
                   {loan.book?.img ? (
                     <img src={loan.book?.img} width="226" height="349" alt="Book" />
                   ) : (
-                    <img
-                      src={require("./../../../Images/BooksImages/book-luv2code-1000.png")}
-                      width="226"
-                      height="349"
-                      alt="Book"
-                    />
+                    <img src={require("./../../../Images/BooksImages/book-luv2code-1000.png")} width="226" height="349" alt="Book" />
                   )}
                 </div>
                 <div className="card d-flex mt-5 mb-3">
                   <div className="card-body container">
                     <div className="mt-3">
                       <h4>Loan Options</h4>
-                      {loan.daysLeft > 0 && (
-                        <p className="text-secondary">Due in {loan.daysLeft} days.</p>
-                      )}
+                      {loan.daysLeft > 0 && <p className="text-secondary">Due in {loan.daysLeft} days.</p>}
                       {loan.daysLeft === 0 && <p className="text-success">Due Today.</p>}
-                      {loan.daysLeft < 0 && (
-                        <p className="text-danger">Past due by {loan.daysLeft} days.</p>
-                      )}
+                      {loan.daysLeft < 0 && <p className="text-danger">Past due by {loan.daysLeft} days.</p>}
                       <div className="list-group mt-3">
-                        <button
-                          className="list-group-item list-group-item-action"
-                          aria-current="true"
-                          data-bs-toggle="modal"
-                          data-bs-target={`#mobilemodal${loan.book.id}`}>
+                        <button className="list-group-item list-group-item-action" aria-current="true" data-bs-toggle="modal" data-bs-target={`#mobilemodal${loan.book.id}`}>
                           Manage Loan
                         </button>
                         <Link to={"search"} className="list-group-item list-group-item-action">
@@ -212,12 +179,7 @@ export const Loans = () => {
                 </div>
 
                 <hr />
-                <LoansModal
-                  loan={loan}
-                  mobile={true}
-                  returnBook={returnBook}
-                  renewLoan={renewLoan}
-                />
+                <LoansModal loan={loan} mobile={true} returnBook={returnBook} renewLoan={renewLoan} />
               </div>
             ))}
           </>

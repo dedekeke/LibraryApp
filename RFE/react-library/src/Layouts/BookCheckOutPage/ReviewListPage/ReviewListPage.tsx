@@ -18,9 +18,7 @@ export const ReviewListPage = () => {
 
   useEffect(() => {
     const fetchBookReviews = async () => {
-      const reviewUrl: string = `http://localhost:8080/api/reviews/search/findByBookId?bookId=${bookId}&page=${
-        currentPage - 1
-      }&size=${reviewsPerPage}`;
+      const reviewUrl: string = `${process.env.REACT_APP_API}/reviews/search/findByBookId?bookId=${bookId}&page=${currentPage - 1}&size=${reviewsPerPage}`;
 
       const responseReviews = await fetch(reviewUrl);
 
@@ -68,10 +66,7 @@ export const ReviewListPage = () => {
   const indexOfLastReview: number = currentPage * reviewsPerPage;
   const indexOfFirstReview: number = indexOfLastReview - reviewsPerPage;
 
-  let lastItem =
-    reviewsPerPage * currentPage <= totalAmountOfReviews
-      ? reviewsPerPage * currentPage
-      : totalAmountOfReviews;
+  let lastItem = reviewsPerPage * currentPage <= totalAmountOfReviews ? reviewsPerPage * currentPage : totalAmountOfReviews;
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
@@ -88,9 +83,7 @@ export const ReviewListPage = () => {
           <Review review={review} key={review.id} />
         ))}
       </div>
-      {totalPages > 1 && (
-        <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
-      )}
+      {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />}
     </div>
   );
 };

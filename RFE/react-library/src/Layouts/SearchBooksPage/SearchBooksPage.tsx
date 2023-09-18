@@ -19,7 +19,7 @@ export const SearchBooksPage = () => {
 
   useEffect(() => {
     const fetchBooks = async () => {
-      const baseUrl: string = "http://localhost:8080/api/books";
+      const baseUrl: string = `${process.env.REACT_APP_API}/books`;
 
       let url: string = "";
 
@@ -90,25 +90,16 @@ export const SearchBooksPage = () => {
     if (search === "") {
       setSearchUrl(``);
     } else {
-      setSearchUrl(
-        `/search/findByTitleContaining?title=${search}&page=<pageNumber>&size=${booksPerPage}`
-      );
+      setSearchUrl(`/search/findByTitleContaining?title=${search}&page=<pageNumber>&size=${booksPerPage}`);
       setCategorySelection("Book category");
     }
   };
   // category
   const categoryField = (value: string) => {
     setCurrentPage(1);
-    if (
-      value.toLowerCase() === "fe" ||
-      value.toLowerCase() === "be" ||
-      value.toLowerCase() === "data" ||
-      value.toLowerCase() === "devops"
-    ) {
+    if (value.toLowerCase() === "fe" || value.toLowerCase() === "be" || value.toLowerCase() === "data" || value.toLowerCase() === "devops") {
       setCategorySelection(value);
-      setSearchUrl(
-        `/search/findByCategory?category=${value}&page=<pageNumber>&size=${booksPerPage}`
-      );
+      setSearchUrl(`/search/findByCategory?category=${value}&page=<pageNumber>&size=${booksPerPage}`);
     } else {
       setCategorySelection("All");
       setSearchUrl(`?page=<pageNumber>&size=${booksPerPage}`);
@@ -117,10 +108,7 @@ export const SearchBooksPage = () => {
 
   const indexOfLastBook: number = currentPage * booksPerPage;
   const indexOfFirstBook: number = indexOfLastBook - booksPerPage;
-  let lastItem =
-    booksPerPage * currentPage <= totalAmountOfBooks
-      ? booksPerPage * currentPage
-      : totalAmountOfBooks;
+  let lastItem = booksPerPage * currentPage <= totalAmountOfBooks ? booksPerPage * currentPage : totalAmountOfBooks;
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
@@ -131,13 +119,7 @@ export const SearchBooksPage = () => {
           <div className="row mt-5">
             <div className="col-6">
               <div className="d-flex">
-                <input
-                  type="search"
-                  placeholder="Search"
-                  aria-labelledby="Search"
-                  className="form-control me-2"
-                  onChange={(e) => setSearch(e.target.value)}
-                />
+                <input type="search" placeholder="Search" aria-labelledby="Search" className="form-control me-2" onChange={(e) => setSearch(e.target.value)} />
                 <button className="btn btn-outline-success" onClick={searchHandleChange}>
                   Search
                 </button>
@@ -145,12 +127,7 @@ export const SearchBooksPage = () => {
             </div>
             <div className="col-4">
               <div className="dropdown">
-                <button
-                  className="btn btn-secondary dropdown-toggle"
-                  id="dropdownMenuButton1"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                <button className="btn btn-secondary dropdown-toggle" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {categorySelection}
                 </button>
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -196,17 +173,12 @@ export const SearchBooksPage = () => {
           ) : (
             <div className="m-5">
               <h3>Can't find what you are looking for?</h3>
-              <a
-                href="#"
-                type="button"
-                className="btn main-color btn-md px-4 me-md-2 fw-bold text-white">
+              <a href="#" type="button" className="btn main-color btn-md px-4 me-md-2 fw-bold text-white">
                 Library Services
               </a>
             </div>
           )}
-          {totalPages > 1 && (
-            <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
-          )}
+          {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />}
         </div>
       </div>
     </div>

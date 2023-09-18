@@ -22,9 +22,7 @@ export const AdminMessages = () => {
   useEffect(() => {
     const fetchUserMessages = async () => {
       if (authState && authState?.isAuthenticated) {
-        const url = `http://localhost:8080/api/messages/search/findByClosed/?closed=false&page=${
-          currentPage - 1
-        }&size=${messagesPerPage}`;
+        const url = `${process.env.REACT_APP_API}/messages/search/findByClosed/?closed=false&page=${currentPage - 1}&size=${messagesPerPage}`;
         const requestOption = {
           method: "GET",
           headers: {
@@ -59,25 +57,25 @@ export const AdminMessages = () => {
     </div>;
   }
 
-    async function submitResponseToQuestion(id: number, response: string) {
-      const url = `http://localhost:8080/api/messages/secure/admin/message`;
-      if (authState && authState?.isAuthenticated && id !== null && response !== '') {
-          const messageAdminRequestModel: AdminMessageRequest = new AdminMessageRequest(id, response);
-          const requestOptions = {
-              method: 'PUT',
-              headers: {
-                  Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(messageAdminRequestModel)
-          };
+  async function submitResponseToQuestion(id: number, response: string) {
+    const url = `${process.env.REACT_APP_API}/messages/secure/admin/message`;
+    if (authState && authState?.isAuthenticated && id !== null && response !== "") {
+      const messageAdminRequestModel: AdminMessageRequest = new AdminMessageRequest(id, response);
+      const requestOptions = {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(messageAdminRequestModel),
+      };
 
-          const messageAdminRequestModelResponse = await fetch(url, requestOptions);
-          if (!messageAdminRequestModelResponse.ok) {
-              throw new Error('Something went wrong!');
-          }
-          setBtnSubmit(!btnSubmit);
+      const messageAdminRequestModelResponse = await fetch(url, requestOptions);
+      if (!messageAdminRequestModelResponse.ok) {
+        throw new Error("Something went wrong!");
       }
+      setBtnSubmit(!btnSubmit);
+    }
   }
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);

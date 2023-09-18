@@ -18,7 +18,7 @@ const Messages = () => {
   useEffect(() => {
     const fetchUserMessages = async () => {
       if (authState && authState?.isAuthenticated) {
-        const url = `http://localhost:8080/api/messages/search/findByUserEmail/?userEmail=${authState?.accessToken?.claims.sub}&page=${currentPage - 1}&size=${messagesPerPage}`;
+        const url = `${process.env.REACT_APP_API}/messages/search/findByUserEmail/?userEmail=${authState?.accessToken?.claims.sub}&page=${currentPage - 1}&size=${messagesPerPage}`;
         const requestOption = {
           method: "GET",
           headers: {
@@ -80,9 +80,7 @@ const Messages = () => {
                     </>
                   ) : (
                     <p>
-                      <i>
-                        Pending response from administration. Please be patient.
-                      </i>
+                      <i>Pending response from administration. Please be patient.</i>
                     </p>
                   )}
                 </div>
@@ -93,7 +91,7 @@ const Messages = () => {
       ) : (
         <h5>All questions you submit will be shown here.</h5>
       )}
-      {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate}/>}
+      {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />}
     </div>
   );
 };

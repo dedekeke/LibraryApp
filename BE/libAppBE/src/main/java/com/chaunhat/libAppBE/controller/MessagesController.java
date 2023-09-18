@@ -9,7 +9,7 @@ import com.chaunhat.libAppBE.requestmodels.AdminQuestionRequest;
 import com.chaunhat.libAppBE.service.MessagesService;
 import com.chaunhat.libAppBE.utils.ExtractJWT;
 
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://localhost:3000")
 @RestController
 @RequestMapping("/api/messages")
 public class MessagesController {
