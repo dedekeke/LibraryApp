@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { App } from './App';
-import { BrowserRouter } from 'react-router-dom';
+import {App} from './App';
+import {BrowserRouter} from 'react-router-dom';
+import {loadStripe} from "@stripe/stripe-js";
+import {Elements} from "@stripe/react-stripe-js";
+
+const stripePromise = loadStripe('pk_test_51NtsllIPQPvjuoNULkTYldknHwWHTKClIgH1ufQe7dyEwte2NSxEOHSbYrvyhyfX1zhPEKTcVo78n9Om2yMucGnO00GRi4EYp9');
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <BrowserRouter>
+        <Elements stripe={stripePromise}>
+            <App/>
+        </Elements>
+    </BrowserRouter>
 );
 
